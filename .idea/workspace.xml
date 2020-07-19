@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+
     <list default="true" id="6ff032b3-5289-4c06-a9e3-54538dc74133" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/rankLines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/DataScience.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DataScience.iml" afterDir="false" />
@@ -10,11 +11,13 @@
       <change beforePath="$PROJECT_DIR$/user2case.py" beforeDir="false" afterPath="$PROJECT_DIR$/user2case.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -126,6 +129,7 @@
       </file>
     </leaf>
   </component>
+
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -156,7 +160,7 @@
     <option name="width" value="1945" />
     <option name="height" value="1060" />
   </component>
-  <component name="ProjectId" id="1eqmTeE7grSdLdtuHu67WdFTFWu" />
+
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -196,6 +200,7 @@
   </component>
   <component name="RunManager" selected="Python.rankLines">
     <configuration name="countLines" type="PythonConfigurationType" factoryName="Python" temporary="true">
+
       <module name="DataScience" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -207,8 +212,10 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/countLines.py" />
+
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -239,7 +246,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+
     <configuration name="rankLines" type="PythonConfigurationType" factoryName="Python" temporary="true">
+
       <module name="DataScience" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -297,6 +306,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user2case.py" />
+
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -307,11 +317,13 @@
     </configuration>
     <recent_temporary>
       <list>
+
         <item itemvalue="Python.rankLines" />
         <item itemvalue="Python.unzipCaseResults" />
         <item itemvalue="Python.user2case" />
         <item itemvalue="Python.mark" />
         <item itemvalue="Python.countLines" />
+
       </list>
     </recent_temporary>
   </component>
@@ -320,6 +332,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+
       <changelist id="6ff032b3-5289-4c06-a9e3-54538dc74133" name="Default Changelist" comment="" />
       <created>1595073991296</created>
       <option name="number" value="Default" />
@@ -493,5 +506,6 @@
         </state>
       </provider>
     </entry>
+
   </component>
 </project>

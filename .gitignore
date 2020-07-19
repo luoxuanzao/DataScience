@@ -3,6 +3,7 @@ cases.json
 unzipError.txt
 sample.json
 test_data.json
+
 .idea
 .idea/DataScience.iml
 .idea/misc.xml

@@ -3,8 +3,8 @@ import json
 import os
 
 resPath = 'cases.json'
-
 dir_name = "cases"
+# dir_name = "C:/Users/12463/Desktop/cases/cases"
 errPath = "unzipError.txt"
 if os.path.exists(errPath):
     os.remove(errPath)

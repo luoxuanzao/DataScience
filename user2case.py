@@ -2,6 +2,7 @@ import json
 
 # 把按用户分类的JSON文件转成按题目分类的JSON文件
 resPath = 'test_data.json'
+# resPath = 'C:/Users/12463/Desktop/test_data.json'
 outPath = 'cases.json'
 f = open(resPath, encoding='utf-8')
 f1 = open(outPath, "w", encoding='utf-8')

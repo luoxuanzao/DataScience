@@ -3,14 +3,17 @@ import os
 
 resPath = "cases.json"
 outputPath = "langAnalysis.json"
+pyPercentPath = "pyPercent.json"
 dir_name = "cases"
 f = open(resPath, encoding='utf-8')
 outputFile = open(outputPath, "w", encoding='utf-8')
+pyPercentFile = open(pyPercentPath, "w", encoding='utf-8')
 
 res = f.read()
 data = json.loads(res)
 result_dict = {}
-
+pyPercent_dict = {}
+no_py_count = 0
 for case in data:
     print(case)
     result_dict.setdefault(case, {"case_id": int(case)})
@@ -38,8 +41,12 @@ for case in data:
     for language in case_dict["languages"]:
         if language == "Python3" or language == "Python":
             py_count = py_count + case_dict["languages"][language]
+        else:
+            no_py_count = no_py_count + case_dict["languages"][language]
     py_percent = py_count / case_dict["case_num"]
     case_dict["py_percent"] = py_percent
-
+    pyPercent_dict.setdefault(case, py_percent)
+result_dict.setdefault("not_py_count", no_py_count)
 
 json.dump(result_dict, outputFile, sort_keys=True)
+json.dump(pyPercent_dict,pyPercentFile,sort_keys=True)

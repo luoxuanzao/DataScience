@@ -38,7 +38,6 @@ finalMarkAverageList = []
 for i in range(0, len(questionId)):
     finalMarkAverage[questionId[i]] = finalMarkSum[i] / peopleNum[i]
     finalMarkAverageList.append(finalMarkSum[i] / peopleNum[i])
-finalMarkAverage = sorted(finalMarkAverage.items(), key=lambda x: x[1], reverse=False)
 print(len(finalMarkAverage))
 # print(finalMarkAverage)
 finalMarkAverageList.sort()
@@ -70,20 +69,20 @@ finalMarkAverageList.sort()
 # 在剩余60%的题目按照5%，10%，20%，25%归类为难度为5，4，3，2
 # 题目数量分别为44，88，179，224
 # markDifficulty表示根据得分所评价的题目难度
-markDifficulty = {}
-for i in range(len(finalMarkAverage)):
-    if i < 44:
-        markDifficulty[finalMarkAverage[i][0]] = 5
-    elif i < 132:
-        markDifficulty[finalMarkAverage[i][0]] = 4
-    elif i < 311:
-        markDifficulty[finalMarkAverage[i][0]] = 3
-    elif i < 535:
-        markDifficulty[finalMarkAverage[i][0]] = 2
-    else:
-        markDifficulty[finalMarkAverage[i][0]] = 1
-print(markDifficulty)
+# markDifficulty = {}
+# for i in range(len(finalMarkAverage)):
+#    if i < 44:
+#        markDifficulty[finalMarkAverage[i][0]] = 5
+#    elif i < 132:
+#        markDifficulty[finalMarkAverage[i][0]] = 4
+#    elif i < 311:
+#        markDifficulty[finalMarkAverage[i][0]] = 3
+#    elif i < 535:
+#        markDifficulty[finalMarkAverage[i][0]] = 2
+#    else:
+#        markDifficulty[finalMarkAverage[i][0]] = 1
+# print(markDifficulty)
 
 outPath = 'markLevel.json'
 outFile = open(outPath, "w", encoding='utf-8')
-json.dump(markDifficulty, outFile, sort_keys=True)
+json.dump(finalMarkAverage, outFile, sort_keys=True)

@@ -10,6 +10,7 @@ import zipfile
 
 # 转换JSON
 # 把按用户分类的JSON文件转成按题目分类的JSON文件
+print("Begin:", "user2case")
 resPath = 'test_data.json'
 # resPath = 'C:/Users/12463/Desktop/test_data.json'
 outPath = 'cases.json'
@@ -26,8 +27,10 @@ for user in data:
         myDict.setdefault(case["case_id"], {"case_id": int(case["case_id"])})
         myDict[case["case_id"]].setdefault("user_records", []).append(case)
 json.dump(myDict, f1, sort_keys=True)
+print("Finish:", "user2case")
 
 # 下载源数据
+print("Begin:", "downloadCases")
 resPath = 'cases.json'
 dir_name = "cases"
 f = open(resPath, encoding='utf-8')
@@ -60,8 +63,10 @@ for case in data:
     count = count + 1
     progress = round((count / case_num) * 100, 2)
     print("Progress:", progress, "%")
+print("Finish: ", "downloadCases")
 
 # 解压并删除压缩包
+print("Begin:", "unzip and delete")
 resPath = 'cases.json'
 dir_name = "cases"
 # dir_name = "C:/Users/12463/Desktop/cases/cases"
@@ -139,3 +144,5 @@ def deleteFile():
 
 unzipFile()
 deleteFile()
+print("Finish:", "unzip and delete")
+print("Done!")

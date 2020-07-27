@@ -2,17 +2,19 @@ import json
 import os
 
 resPath = "cases.json"
-outputPath = "langAnalysis.json"
+# outputPath = "langAnalysis.json"
 pyPercentPath = "pyPercent.json"
+# typePath="type.json"
 dir_name = "cases"
 f = open(resPath, encoding='utf-8')
-outputFile = open(outputPath, "w", encoding='utf-8')
+# outputFile = open(outputPath, "w", encoding='utf-8')
 pyPercentFile = open(pyPercentPath, "w", encoding='utf-8')
-
+# typeFile=open(typePath,"w",encoding='utf-8')
 res = f.read()
 data = json.loads(res)
 result_dict = {}
 pyPercent_dict = {}
+type_dict={}
 no_py_count = 0
 for case in data:
     print(case)
@@ -46,7 +48,8 @@ for case in data:
     py_percent = py_count / case_dict["case_num"]
     case_dict["py_percent"] = py_percent
     pyPercent_dict.setdefault(case, py_percent)
+
+    type_dict[case]=data[case]["user_records"][0]["case_type"]
 result_dict.setdefault("not_py_count", no_py_count)
 
-json.dump(result_dict, outputFile, sort_keys=True)
 json.dump(pyPercent_dict,pyPercentFile,sort_keys=True)

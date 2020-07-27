@@ -27,6 +27,8 @@ for user in data:
         myDict.setdefault(case["case_id"], {"case_id": int(case["case_id"])})
         myDict[case["case_id"]].setdefault("user_records", []).append(case)
 json.dump(myDict, f1, sort_keys=True)
+f.close()
+f1.close()
 print("Finish:", "user2case")
 
 # 下载源数据
@@ -63,6 +65,7 @@ for case in data:
     count = count + 1
     progress = round((count / case_num) * 100, 2)
     print("Progress:", progress, "%")
+f.close()
 print("Finish: ", "downloadCases")
 
 # 解压并删除压缩包

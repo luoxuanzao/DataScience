@@ -3,12 +3,13 @@ import numpy as np
 import json
 from matplotlib import pyplot as plt
 import pandas as pd
-from sklearn.cluster import KMeans #Kmeans
-from sklearn.preprocessing import MinMaxScaler#数据标准化包
+from sklearn.cluster import KMeans  # Kmeans
+from sklearn.preprocessing import MinMaxScaler  # 数据标准化包
 # x效果评估模块
 from sklearn.metrics import silhouette_score
 from sklearn.metrics import calinski_harabasz_score
 import matplotlib  as mp1
+
 f1 = open("countLine.json")
 f2 = open("pyPercent.json")
 f3 = open("markLevel.json")
@@ -16,7 +17,7 @@ lines = json.load(f1)
 py = json.load(f2)
 mark = json.load(f3)
 arrays = []
-plt.rcParams['font.sans-serif']=['SimHei']
+plt.rcParams['font.sans-serif'] = ['SimHei']
 
 # arrayLines = []
 # arrayPy = []
@@ -49,7 +50,7 @@ def getArray(lineArray, pyArray, markArray):
     pyArray = standardizing(pyArray, False)
     markArray = standardizing(markArray, False)
     for i in range(len(pyArray)):
-        arrayRank.append(lineArray[i] * 0.07 + pyArray[i] * 0.60 + markArray[i] * 0.33)
+        arrayRank.append(lineArray[i] * 0.183880 + pyArray[i] * 0.443304 + markArray[i] * 0.372815)
     resultArray = np.array(arrayRank).reshape(-1, 1)
     return np.array(arrayRank).reshape(-1, 1)
 
@@ -83,14 +84,16 @@ def calKmeans(X):
     # print(re)
     # print(type(re))
     difficulty = [0, 0, 0, 0, 0]
-    detail = ["最简单", "简单", "中等", "较难", "最难"]
+    detail = ["最简单", "较简单", "中等", "较难", "最难"]
     for key in re:
         print(key, end=" ")
         difficulty[index[re[key]]] += 1
         print(detail[index[re[key]]])
     for i in range(len(difficulty)):
         print(detail[i], ":" + str(difficulty[i]))
-    plt.pie(difficulty,labels=detail,autopct='%.0f%%')
+    # plt.axes(aspect='equal')
+    # plt.pie(difficulty, labels=detail, autopct='%.0f%%')
+    plt.title("各分数段频数")
 
 
 calKmeans(getArray(lineArray, pyArray, markArray))
@@ -100,7 +103,7 @@ plt.hist(
     x=arrayRank,
     bins=100,
     color='steelblue',  # 指定直方图的填充色
-    edgecolor='black'  # 指定直方图的边框色
+    edgecolor='blue'  # 指定直方图的边框色
 )
+plt.savefig("number.jpg")
 plt.show()
-
